@@ -1,0 +1,33 @@
+Real time propagation 2d, OPTION = 2, NUM_THREADS = 16
+
+Number of atoms N = 10000, Unit of length AHO = 0.00000100 m
+Scattering length a = 3.769458*a0
+Calculated nonlinearity G_3D = 25.066283, G_2D = 100.000000
+Parameters of trap: GAMMA = 1.00, NU = 1.00
+Parameters of rotation: ANG VEL = 0.8000
+Axial trap parameter = 0.10
+
+Space steps: NX = 257, NY = 257
+             DX = 0.050000, DY = 0.050000
+Time steps:  NSTP = 0, NPAS = 2000000, NRUN = 1
+             DT = 0.000100
+
+             -----------------------------------------------------
+               Iter     Norm       Chem       Ener/N      <rho>
+             -----------------------------------------------------
+Initial:               1.0000     4.35078     3.19044    2.58419
+NPAS iter.:      1     1.0000     4.35076     3.19042    2.58406
+NPAS iter.:      2     1.0000     4.35090     3.19033    2.58380
+NPAS iter.:      3     1.0000     4.35090     3.19045    2.58397
+NPAS iter.:      4     1.0000     4.35050     3.19031    2.58421
+NPAS iter.:      5     1.0000     4.35071     3.19033    2.58398
+NPAS iter.:      6     1.0000     4.35093     3.19037    2.58379
+NPAS iter.:      7     1.0000     4.35065     3.19035    2.58406
+NPAS iter.:      8     1.0000     4.35064     3.19036    2.58419
+NPAS iter.:      9     1.0000     4.35089     3.19041    2.58390
+NPAS iter.:     10     1.0000     4.35097     3.19040    2.58382
+NRUN iter.:            1.0000     4.35097     3.19040    2.58382
+            -----------------------------------------------------
+
+ Clock Time: 1577 seconds
+ CPU Time: 24767 seconds

@@ -1,0 +1,212 @@
+#  Type of rescaling of Gross-Pitaevskii equation.
+#  Possible values: 1 or 2.
+#  Required: yes
+#  Type: int
+   OPTSCALE = 2
+
+#  Type of time-propagation: imaginary-time (value 1) or real-time (value 2).
+#  Possible values: 1 or 2.
+#  Required: yes
+#  Type: int
+   OPTREIM = 2
+
+#  Add random phase in the x-y plane to the analytically defined initial wave
+#  function in the imaginary-time propagation. Not used if the initial wave
+#  function is read from the file.
+#  Possible values: 0 (no) or 1 (yes).
+#  Required: no, defaults to 1 if not defined
+#  Type: int
+#  ADD_RANDOM_PHASE = 1
+
+#  Add one vortex to the analytically defined initial wave function in the
+#  imaginary-time propagation. Not used if the initial wave function is
+#  read from the file.
+#  Possible values: 0 (no) or 1 (yes).
+#  Required: no, defaults to 1 if not defined
+#  Type: int
+#  ADD_ONE_VORTEX = 1
+
+#  Coefficient of the nonlinear term. If not defined, G0 is calculated as
+#     G0 = 4 * Pi * AS * NATOMS * a0
+#  where AS is contact interaction strength, NATOMS number of atoms in
+#  condensate, and a0 Bohr radius.
+#  Required: no
+#  Type: double
+#   G0 = 25.0663
+
+#  Number of atoms in condensate. Required if G0 is not defined.
+#  Required: conditionally
+#  Type: int
+   NATOMS = 10000
+
+#  Unit of length (defined by a chosen referent frequency omega_ref).
+#  Required if G0 is not defined.
+#  Required: conditionally
+#  Type: double
+   AHO = 1.e-6
+
+#  Contact interaction strength in units of Bohr radius. Required if G0 is not
+#  defined.
+#  Required: conditionally
+#  Type: double
+   AS = 3.769458264
+
+#  Angular velocity (omega / omega_ref).
+#  Required: yes
+#  Type: double
+   OMEGA = 0.8
+
+#  Random number generator seed. Required if initial wave function is not
+#  provided through an input file.
+#  Required: conditionally
+#  Type: int
+#   SEED = 1
+
+#  Number of discretization points in the x-direction.
+#  Required: yes
+#  Type: int
+   NX = 257
+
+#  Number of discretization points in the y-direction.
+#  Required: yes
+#  Type: int
+   NY = 257
+
+#  Spatial discretization step in the x-direction.
+#  Required: yes
+#  Type: double
+   DX = 0.05
+
+#  Spatial discretization step in the y-direction.
+#  Required: yes
+#  Type: double
+   DY = 0.05
+
+#  Time discretization step.
+#  Required: yes
+#  Type: double
+   DT = 0.0001
+
+#  Gamma coefficient of anisotropy of the trap (omega_x / omega_ref).
+#  Required: yes
+#  Type: double
+   GAMMA = 1.
+
+#  Nu coefficient of anisotropy of the trap (omega_y / omega_ref).
+#  Required: yes
+#  Type: double
+   NU = 1.
+
+#  D_z axial gaussian width.
+#  Required: yes
+#  Type: double
+   D_Z = 0.1
+
+#  Number of subsequent iterations to introduce the nonlinearity G.
+#  Required: yes
+#  Type: int
+   NSTP = 0
+
+#  Number of subsequent iterations with fixed nonlinearity G.
+#  Required: yes
+#  Type: int
+   NPAS = 2000000
+
+#  Number of final iterations with fixed nonlinearity G.
+#  Required: yes
+#  Type: int
+   NRUN = 1
+
+#  Number of intervals during NPAS iterations. Every NPAS/ITER iterations
+#  the program will calculate RMS, chemical potential, energy and (optionally)
+#  density profiles and write them to specified output files.
+   ITER = 10
+
+#  Input file with the wave function, obtained from previous executions.
+#  Required if NSTP = 0.
+#  Required: conditionally
+#  Type: string
+   INPUT = imag2d-final.txt
+
+#  Output file with the summary of final values of all physical quantities.
+#  If not defined, standard output will be used.
+#  Required: no
+#  Type: string
+   OUTPUT = real2d-out
+
+#  Format of output files: textual (value 1), binary (value 2) or
+#  visualization-ready (value 3). Visualization-ready formats use VTK for 2D
+#  and 3D density profiles, while text-based "curve" format is used for 1D
+#  density profiles. Required if any of wave function outputs (INITOUT,
+#  NSTPOUT, NPASOUT, NRUNOUT) is defined.
+#  Possible values: 1, 2 or 3.
+#  Required: conditionally
+#  Type: int
+   OUTTYPE = 1
+
+#  Output file with RMS values. The values are written after initialization,
+#  subsequent NSTP, NPAS, and final NRUN iterations. If not defined, the wave
+#  function will not be saved.
+#  Required: no
+#  Type: string
+   RMSOUT = real2d-rms
+
+#  Filename prefix for output files created from the initial wave function.
+#  If not defined, the initial wave function will not be saved.
+#  Required: no
+#  Type: string
+#   INITOUT = real2d-den-init
+
+#  Filename prefix for output files created after the subsequent NSTP
+#  iterations, with the nonlinearity G0. If not defined, the wave function will
+#  not be saved.
+#  Required: no
+#  Type: string
+#   NSTPOUT = real2d-den-nstp
+
+#  Filename prefix for output files created after the subsequent NPAS
+#  iterations, with the fixed nonlinearity G0. If not defined, the wave
+#  function will not be saved.
+#  Required: no
+#  Type: string
+#   NPASOUT = real2d-den-npas
+
+#  Output file with the final wave function obtained after the final NRUN
+#  iterations. If not defined, the wave function will not be saved.
+#  Required: no
+#  Type: string
+   NRUNOUT = real2d-den
+
+#  Output file with the final wave function obtained at program end that can
+#  subsequently be used as an input wave function. If not defined, the wave
+#  function will not be saved.
+#  Required: no
+#  Type: string
+   FINALOUT = real2d-final
+
+#  Discretization step in the x-direction used to save wave functions. Required
+#  if any of wave function output files (INITOUT, NSTPOUT, NPASOUT, NRUNOUT)
+#  is defined.
+#  Required: conditionally
+#  Type: int
+   OUTSTPX = 1
+
+#  Discretization step in the y-direction used to save wave functions. Required
+#  if any of wave function output files (INITOUT, NSTPOUT, NPASOUT, NRUNOUT)
+#  is defined.
+#  Required: conditionally
+#  Type: int
+   OUTSTPY = 1
+
+#  Value that controls what density profiles will be written in output files.
+#  List of output functions:
+#  1D integrated density X (format "X,DEN") = 1
+#  1D integrated density Y (format "Y,DEN") = 2
+#  2D density XY (format "Y,X,DEN") = 4
+#  OUTFLAGS is provided as a sum of desired density profiles, e.g., OUTFLAGS=5
+#  implies that X and XY densities will be written (1 + 4) and Y will not be
+#  written. Required if any of wave function output files (INITOUT, NSTPOUT,
+#  NPASOUT, NRUNOUT) is defined.
+#  Required: conditionally
+#  Type: int
+   OUTFLAGS = 7
