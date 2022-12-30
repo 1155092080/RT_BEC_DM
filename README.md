@@ -1,5 +1,5 @@
 # BEC-GP-ROT-OMP
-
+Taken from this link: https://data.mendeley.com/datasets/cw7tkn22v2/2
 BEC-GP-ROT-OMP is a set of OpenMP-parallelized C (C99) and Fortran 90 programs, optimized for GNU, Intel, PGI, Clang and Oracle C and Fortran compilers, that solves the time-(in)dependent Gross-Pitaevskii nonlinear partial differential equation for rotating BECs with contact interaction in two and three spatial dimensions in a trap using imaginary-time and real-time propagations, chosen by selecting the parameter `OPTREIM = 1` (imaginary time propagation) and `OPTREIM = 2` (real time propagation). The Gross-Pitaevskii equation describes the properties of a dilute trapped Bose-Einstein condensate. The equation is solved using the split-step Crank-Nicolson method by discretizing space and time, as described in Ref. [1]. The discretized equation is then propagated in imaginary or real time over small time steps. This document describes the C programs of BEC-GP-ROT-OMP code distribution.
 
 ## Description of BEC-GP-ROT-OMP C code distribution
